@@ -6,3 +6,6 @@ en:
     sidebar_num_results: "Number of category posts to display on each sidebar block."
     sidebar_leaderboard_count: "Number of users to show in leaderboard."
     sidebar_leaderboard_period: "Period for leaderboard - Possible values - daily,weekly,monthly,quarterly,yearly,all"
+    sidebar_leaderboard_mobile_enable: "Show leaderboard on mobile ?"
+    sidebar_leaderboard_mobile_count: "Number of users to show in leaderboard for mobile."
+    sidebar_leaderboard_string: "What is leaderboard called ?"

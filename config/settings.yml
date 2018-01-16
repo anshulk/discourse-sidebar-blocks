@@ -19,3 +19,13 @@ plugins:
   sidebar_leaderboard_period:
     default: 'daily'
     client: true
+  sidebar_leaderboard_mobile_enable:
+    default: false
+    client: true
+  sidebar_leaderboard_mobile_count:
+    default: '3'
+    client: true
+  sidebar_leaderboard_string:
+    type: text
+    default: 'Top Contributors'
+    client: true

@@ -100,8 +100,15 @@ html:not(.mobile-view) {
 	border: 1px solid lightgray;
 	border-radius: 5px;
 
+	td{
+		text-align: center;
+		padding-left: 10px;
+	}
+
 	.sidebar-heading{
 		text-align: center;
+		padding: 5px;
+		padding-bottom: 0;
 
 		#caret-icon{
 			float:right;
