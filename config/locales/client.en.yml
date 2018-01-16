@@ -1,4 +1,6 @@
-en: 
-  js: 
-    sidebar_blocks: 
+en:
+  js:
+    sidebar_blocks:
       recent_replies: "Recent replies"
+    search:
+      title_ask: "ask any queries you have regarding Indian Railways"

@@ -18,7 +18,7 @@ createWidget('search-term-tm', {
   buildAttributes(attrs) {
     return { type: 'text',
              value: attrs.value || '',
-             placeholder: attrs.contextEnabled ? "" : I18n.t('search.title') };
+             placeholder: attrs.contextEnabled ? "" : I18n.t('search.title_ask') };
   },
 
   keyUp(e) {
