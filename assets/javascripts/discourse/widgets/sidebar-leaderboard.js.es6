@@ -37,7 +37,7 @@ createWidget('sidebar-leaderboard', {
 					h('div.useravatar', this.attach('topic-participant', user.user)),
 					h('div.username.trigger-data-card', user.user.username)
 				]),
-				h('td', h('span.points', user.likes_received+''))
+				h('td', h('span.points', user.points+''))
 			]);
 	},
 
@@ -74,8 +74,8 @@ createWidget('sidebar-leaderboard', {
 					    h("tr", [
 					      h("th", 'User'),
 					      h("th", [
-									h('i.fa.fa-heart.d-icon.d-icon-heart'),
-									h('span','Received')
+									h('i.fa.fa-star.d-icon.d-icon-star'),
+									h('span','Points')
 								])
 					    ]),
 					    users
