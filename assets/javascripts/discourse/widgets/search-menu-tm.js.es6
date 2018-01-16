@@ -177,7 +177,7 @@ export default createWidget('search-menu-tm', {
   },
 
   clickOutside() {
-    // this.sendWidgetAction('toggleSearchMenu');
+    this.sendWidgetAction('toggleSearchMenu');
   },
 
   keyDown(e) {

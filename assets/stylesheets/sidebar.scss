@@ -99,10 +99,24 @@ html:not(.mobile-view) {
 .mobile-view .sidebar-leaderboard {
 	border: 1px solid lightgray;
 	border-radius: 5px;
+	padding-bottom: 0;
 
 	td{
 		text-align: center;
 		padding-left: 10px;
+
+		.username{
+			padding-top: 0;
+		}
+
+		.useravatar{
+			height:15px;
+			width: 15px;
+			img{
+				height: 25px;
+				width: 25px;
+			}
+		}
 	}
 
 	.sidebar-heading{
