@@ -2,7 +2,7 @@ import { createWidget } from 'discourse/widgets/widget';
 import { h } from 'virtual-dom';
 import { getLeaderboardList } from 'discourse/plugins/discourse-sidebar-blocks/discourse/helpers/leaderboard-list';
 
-createWidget('sidebar-leaderboard', {
+createWidget('sidebar-leaderboard-mobile', {
   tagName: 'div.sidebar-leaderboard',
 	buildKey: attrs => 'sidebar-leaderboard',
 	defaultState() {
@@ -15,7 +15,7 @@ createWidget('sidebar-leaderboard', {
 		getLeaderboardList(this).then((result) => {
 			// console.log("refreshUsers List : ", result);
 			if (result.length) {
-				this.state.users = result;
+				this.state.users = result.splice(0,3);
 			} else {
 				this.state.users = 'empty'
 			}
@@ -37,21 +37,30 @@ createWidget('sidebar-leaderboard', {
 					h('div.useravatar', this.attach('topic-participant', user.user)),
 					h('div.username.trigger-data-card', user.user.username)
 				]),
-				h('td', h('span.points', user.points+''))
+				h('td', [
+					h('span.points', user.points+''), h('i.fa.fa-star.d-icon.d-icon-star')
+				])
 			]);
 	},
 
 	leaderboardHeader(){
 		return h(
-			'h3.sidebar-heading', h(
-				'a', {
-					'attributes':{
-						'href':'/u',
-						'title':'Top Contributors'
-					}
-				},
-				'Top Contributors'
-			)
+			'h3.sidebar-heading', {
+				"attributes": {
+					"onclick": "$('#caret-icon').toggleClass('fa-caret-up fa-caret-down'); $('#leaderboard-list').toggle();"
+				}
+			},
+			[
+				h('a', {
+						'attributes':{
+							'href':'/u',
+							'title':'Top Contributors'
+						}
+					},
+					'Top Contributors'
+				),
+				h('i#caret-icon.fa.fa-caret-down')
+			]
 		);
 	},
 
@@ -68,16 +77,9 @@ createWidget('sidebar-leaderboard', {
 			const users = state.users.map( user => this.leaderboardRow(user))
 
 			result.push(
-				h("div.directory",
+				h("div.directory#leaderboard-list",
 					h("table", [
 					  h("tbody", [
-					    h("tr", [
-					      h("th", 'User'),
-					      h("th", [
-									h('i.fa.fa-star.d-icon.d-icon-star'),
-									h('span','Points')
-								])
-					    ]),
 					    users
 					  ])
 					])

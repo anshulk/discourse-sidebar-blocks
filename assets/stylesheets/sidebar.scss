@@ -78,27 +78,7 @@ html:not(.mobile-view) {
   .sidebar-custom-content {
     margin-bottom: 30px;
   }
-	.sidebar-leaderboard{
-		td{
-			.username{
-				padding-left: 40px;
-				padding-top: 3%;
-			}
-			.useravatar{
-				float:left;
-			}
-		}
-
-		.points{
-			margin-left: 30px;
-		}
-
-		.fa-star {
-			color: gold;
-			padding-right: 0.5em;
-		}
-	}
-  .desktop-hidden{
+	.desktop-hidden{
     display: none;
   }
   .search-input.tm{
@@ -113,7 +93,51 @@ html:not(.mobile-view) {
     text-align: -webkit-center;
     padding: 10px;
   }
+
 }
+
+.mobile-view .sidebar-leaderboard {
+	border: 1px solid lightgray;
+	border-radius: 5px;
+
+	.sidebar-heading{
+		text-align: center;
+
+		#caret-icon{
+			float:right;
+			margin:5px;
+		}
+	}
+
+}
+
+.sidebar-leaderboard{
+
+	.directory{
+		margin-bottom: 5px;
+	}
+
+	td{
+		.username{
+			padding-left: 40px;
+			padding-top: 3%;
+		}
+		.useravatar{
+			float:left;
+		}
+	}
+
+	.points{
+		margin-left: 30px;
+	}
+
+	.fa-star {
+		color: gold;
+		padding-left: 1em;
+	}
+}
+
+
 html.mobile-view{
   .mobile-hidden{
     display: none;
