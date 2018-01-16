@@ -188,11 +188,15 @@ html.mobile-view{
     right: 38px;
     text-align: -webkit-center;
   }
+  .results-box-tm ul li{
+    padding: 10px 0px 0px 0px;
+    //border-bottom: 1px solid gainsboro;
+  }
 }
 
 .search-input-tm{
   border: none !important;
-  font-size: 23px !important;
+  font-size: 18px !important;
   padding-left:0px !important;
   width: 67% !important;
   padding:10px !important;
@@ -230,10 +234,9 @@ html.mobile-view{
   background: #ff6600;
   color:white;
   border-radius: 5px;
-  padding: 15px;
-  margin: 10px;
+  padding: 10px;
+  margin-left: 10px;
   border: none;
-  height: 44px;
 }
 .results-box-tm ul{
   list-style: none;
@@ -241,7 +244,7 @@ html.mobile-view{
 }
 .results-box-tm ul li{
   padding: 5px 0px 0px 0px;
-  border-bottom: 1px solid gainsboro;
+  //border-bottom: 1px solid gainsboro;
 }
 .mobile-hidden{
   display: inline-block;
@@ -253,5 +256,5 @@ html.mobile-view{
   padding-bottom: 5px;
 }
 .badge-wrapper.bullet .badge-category-parent-bg, .badge-wrapper.bullet .badge-category-bg{
-  display: none;
+  //display: none;
 }
