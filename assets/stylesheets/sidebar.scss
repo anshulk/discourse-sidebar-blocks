@@ -142,6 +142,9 @@ html.mobile-view{
   .mobile-hidden{
     display: none;
   }
+  .desktop-hidden{
+    display: inline-block;
+  }
   .results-box-tm{
     width: 80% !important;
     margin-left: 0% !important;
@@ -187,6 +190,7 @@ html.mobile-view{
   position: absolute;
   background-color: white;
   z-index: 9;
+  margin-top: -10px;
 }
 .no-results{
   padding: 10px;
@@ -205,4 +209,10 @@ html.mobile-view{
 .results-box-tm ul{
   list-style: none;
   margin: 0px 5px 9px 9px;
+}
+.results-box-tm ul li{
+  border-bottom: 1px solid gainsboro;
+}
+.mobile-hidden{
+  display: inline-block;
 }

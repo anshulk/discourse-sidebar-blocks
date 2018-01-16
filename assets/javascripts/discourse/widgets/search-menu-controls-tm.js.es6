@@ -26,7 +26,7 @@ createWidget('search-term-tm', {
       if (this.state.afterAutocomplete) {
         this.state.afterAutocomplete = false;
       } else {
-        return this.sendWidgetAction('fullSearch');
+        return this.sendWidgetAction('newQuestionTM');
       }
     }
 

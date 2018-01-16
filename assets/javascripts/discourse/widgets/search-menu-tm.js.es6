@@ -45,6 +45,7 @@ const SearchHelper = {
     const { term, typeFilter, contextEnabled } = searchData;
     const searchContext = contextEnabled ? widget.searchContext() : null;
     const fullSearchUrl = widget.fullSearchUrl();
+    const fullNewTopicUrl = widget.fullNewTopicUrl();
 
     if (!isValidSearchTerm(term)) {
       searchData.noResults = true;
@@ -74,7 +75,7 @@ const SearchHelper = {
 };
 
 export default createWidget('search-menu-tm', {
-  tagName: 'div.search-menu',
+  tagName: 'div.search-menu-tm',
   searchData,
 
   fullSearchUrl(opts) {
@@ -123,8 +124,16 @@ export default createWidget('search-menu-tm', {
 
     let searchInput = [
       this.attach('search-term-tm', { value: searchData.term, contextEnabled }),
-      h('a.mobile-hidden', { href: '/new-topic'},h('button.ask-button-tm','Ask Question')),
-      h('a.desktop-hidden', { href: '/new-topic'},h('button.ask-button-tm','Ask'))
+      h('div.mobile-hidden',h('button.ask-button-tm',{
+        "attributes": {
+          "onclick": "window.location.href='/new-topic?title='+$(\"#search-term-tm\").val();"
+        }
+      }, 'Ask Question')),
+      h('div.desktop-hidden',h('button.ask-button-tm',{
+        "attributes": {
+          "onclick": "window.location.href='/new-topic?title='+$(\"#search-term-tm\").val();"
+        }
+      }, 'Ask'))
     ];
     if (searchData.term && searchData.loading) {
       searchInput.push(h('div.results-box-tm.searching.tm', h('div.spinner')));
@@ -151,6 +160,59 @@ export default createWidget('search-menu-tm', {
     return results;
   },
 
+  newQuestionTM() {
+    if (!isValidSearchTerm(searchData.term)) { return; }
+    searchData.results = [];
+    searchData.loading = false;
+    SearchHelper.cancel();
+    const url = this.fullNewTopicUrl();
+    searchData.term='';
+    if (url) {
+      this.sendWidgetEvent('linkClicked');
+      DiscourseURL.routeTo(url);
+    } else if (searchData.contextEnabled) {
+      this.triggerSearch();
+    }
+  },
+  fullNewTopicUrl(opts) {
+    const contextEnabled = searchData.contextEnabled;
+
+    const ctx = contextEnabled ? this.searchContext() : null;
+    const type = ctx ? Ember.get(ctx, 'type') : null;
+
+    if (contextEnabled && type === 'topic') {
+      return;
+    }
+
+    let url = '/new-topic';
+    const params = [];
+
+    if (searchData.term) {
+      let query = '';
+
+      query += `title=${encodeURIComponent(searchData.term)}`;
+
+      if (contextEnabled && ctx) {
+        if (this.currentUser &&
+          ctx.id.toString().toLowerCase() === this.currentUser.username_lower &&
+          type === "private_messages") {
+          query += ' in:private';
+        } else {
+          query += encodeURIComponent(" " + type + ":" + ctx.id);
+        }
+      }
+
+      if (query) params.push(query);
+    }
+
+    if (opts && opts.expanded) params.push('expanded=true');
+
+    if (params.length > 0) {
+      url = `${url}?${params.join("&")}`;
+    }
+
+    return Discourse.getURL(url);
+  },
   searchService() {
     if (!this._searchService) {
       this._searchService = this.register.lookup('search-service:main');
