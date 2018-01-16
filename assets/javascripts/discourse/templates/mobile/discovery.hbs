@@ -6,9 +6,11 @@
   {{mount-widget widget="search-menu-tm"}}
 </div>
 
-<div>
-	{{mount-widget widget="sidebar-leaderboard-mobile"}}
-</div>
+{{#if siteSettings.sidebar_leaderboard_mobile_enable}}
+	<div>
+		{{mount-widget widget="sidebar-leaderboard-mobile"}}
+	</div>
+{{/if}}
 
 <div class="list-controls">
   <div class="container">

@@ -47,10 +47,10 @@ createWidget('sidebar-leaderboard', {
 				'a', {
 					'attributes':{
 						'href':'/u',
-						'title':'Top Contributors'
+						'title': Discourse.SiteSettings.sidebar_leaderboard_string
 					}
 				},
-				'Top Contributors'
+				Discourse.SiteSettings.sidebar_leaderboard_string
 			)
 		);
 	},

@@ -15,7 +15,7 @@ createWidget('sidebar-leaderboard-mobile', {
 		getLeaderboardList(this).then((result) => {
 			// console.log("refreshUsers List : ", result);
 			if (result.length) {
-				this.state.users = result.splice(0,3);
+				this.state.users = result.splice(0,Discourse.SiteSettings.sidebar_leaderboard_mobile_count);
 			} else {
 				this.state.users = 'empty'
 			}
@@ -54,10 +54,10 @@ createWidget('sidebar-leaderboard-mobile', {
 				h('a', {
 						'attributes':{
 							'href':'/u',
-							'title':'Top Contributors'
+							'title': Discourse.SiteSettings.sidebar_leaderboard_string
 						}
 					},
-					'Top Contributors'
+					Discourse.SiteSettings.sidebar_leaderboard_string
 				),
 				h('i#caret-icon.fa.fa-caret-down')
 			]
