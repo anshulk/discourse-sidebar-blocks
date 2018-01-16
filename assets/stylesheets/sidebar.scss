@@ -240,8 +240,18 @@ html.mobile-view{
   margin: 0px 5px 9px 9px;
 }
 .results-box-tm ul li{
+  padding: 5px 0px 0px 0px;
   border-bottom: 1px solid gainsboro;
 }
 .mobile-hidden{
   display: inline-block;
+}
+.badge-wrapper.bullet{
+  padding-left: 4px;
+}
+.search-link .blurb {
+  padding-bottom: 5px;
+}
+.badge-wrapper.bullet .badge-category-parent-bg, .badge-wrapper.bullet .badge-category-bg{
+  display: none;
 }
