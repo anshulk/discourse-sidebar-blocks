@@ -105,6 +105,14 @@ html:not(.mobile-view) {
     width: 60%;
     margin-left: 20%;
   }
+  .search-menu .searching{
+    position: absolute;
+    top: 65px;
+    left: 4px;
+    width: 92%;
+    text-align: -webkit-center;
+    padding: 10px;
+  }
 }
 html.mobile-view{
   .mobile-hidden{
@@ -120,7 +128,7 @@ html.mobile-view{
   }
   .search-menu .searching {
     position: absolute;
-    top: 80px;
+    top: 60px;
     right: 38px;
     text-align: -webkit-center;
   }
@@ -155,7 +163,6 @@ html.mobile-view{
   position: absolute;
   background-color: white;
   z-index: 9;
-  margin-top: -20px;
 }
 .no-results{
   padding: 10px;
@@ -166,8 +173,8 @@ html.mobile-view{
   background: #ff6600;
   color:white;
   border-radius: 5px;
-  padding: 15px 15px 20px 15px;
-  margin: 10px  10px  30px  10px;
+  padding: 15px;
+  margin: 10px;
   border: none;
   height: 44px;
 }
