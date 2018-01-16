@@ -167,6 +167,7 @@ export default createWidget('search-menu-tm', {
     SearchHelper.cancel();
     const url = this.fullNewTopicUrl();
     searchData.term='';
+    $('#search-term-tm').val('');
     if (url) {
       this.sendWidgetEvent('linkClicked');
       DiscourseURL.routeTo(url);
@@ -239,6 +240,8 @@ export default createWidget('search-menu-tm', {
   },
 
   clickOutside() {
+    searchData.term='';
+    $('#search-term-tm').val('');
     this.sendWidgetAction('toggleSearchMenu');
   },
 
