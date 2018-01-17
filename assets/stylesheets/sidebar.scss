@@ -96,6 +96,24 @@ html:not(.mobile-view) {
 
 }
 
+.mobile-view .directory {
+	table {
+		thead {
+			font-size: .75em;
+		}
+
+		td .user-image{
+			height: 25px;
+			width: 25px;
+
+			a img{
+				height: 25px;
+				width: 25px;
+			}
+		}
+	}
+}
+
 .mobile-view .sidebar-leaderboard {
 	border: 1px solid lightgray;
 	border-radius: 5px;
