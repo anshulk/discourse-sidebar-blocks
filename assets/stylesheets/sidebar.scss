@@ -193,6 +193,13 @@ html.mobile-view{
     padding: 10px 0px 0px 0px;
     //border-bottom: 1px solid gainsboro;
   }
+  .ask-button-tm {
+    font-size: 16px;
+  }
+  .results-box-tm ul li a .topic{
+    //padding: 10px 0px 0px 0px;
+    //border-bottom: 1px solid gainsboro;
+  }
 }
 
 .search-input-tm{
@@ -201,7 +208,7 @@ html.mobile-view{
   padding-left:0px !important;
   width: 67% !important;
   padding:10px !important;
-  height: 20px !important;
+  //height: 20px !important;
   //margin: 10px  10px  30px  10px;
   border: 2px solid grey !important;
   border-radius: 5px !important;
@@ -230,7 +237,7 @@ html.mobile-view{
   padding: 10px;
 }
 .ask-button-tm{
-  font-size: 16px;
+  font-size: 19px;
   text-transform: uppercase;
   background: #ff6600;
   color:white;
@@ -245,7 +252,6 @@ html.mobile-view{
 }
 .results-box-tm ul li{
   padding: 5px 0px 0px 0px;
-  //border-bottom: 1px solid gainsboro;
 }
 .mobile-hidden{
   display: inline-block;
@@ -254,7 +260,8 @@ html.mobile-view{
   padding-left: 4px;
 }
 .search-link .blurb {
-  padding-bottom: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid gainsboro;
 }
 .badge-wrapper.bullet .badge-category-parent-bg, .badge-wrapper.bullet .badge-category-bg{
   //display: none;
