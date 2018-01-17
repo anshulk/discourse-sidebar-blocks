@@ -48,11 +48,11 @@ function createSearchResult({ type, linkField, builder }) {
 function postResult(result, link, term) {
   const html = [link];
 
-  if (!this.site.mobileView) {
+  // if (!this.site.mobileView) {
     html.push(h('span.blurb', [ dateNode(result.created_at),
                                 ' - ',
                                 new Highlighted(result.blurb, term) ]));
-  }
+  // }
 
   return html;
 }

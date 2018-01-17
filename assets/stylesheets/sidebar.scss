@@ -199,6 +199,16 @@ html.mobile-view{
   .search-link .badge-category {
     display: block !important;
   }
+  .search-link .blurb{
+    color: #868686;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    //margin-bottom: 5px;
+    padding-bottom: 5px;
+  }
 }
 
 .search-input-tm{
