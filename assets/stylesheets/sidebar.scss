@@ -97,6 +97,9 @@ html:not(.mobile-view) {
 }
 
 .mobile-view .directory {
+	.user-controls{
+		font-size: .75em;
+	}
 	table {
 		thead {
 			font-size: .75em;
