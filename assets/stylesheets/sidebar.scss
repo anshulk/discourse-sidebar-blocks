@@ -97,6 +97,9 @@ html:not(.mobile-view) {
 }
 
 .mobile-view .directory {
+	.total-rows {
+		display: none;
+	}
 	.user-controls{
 		font-size: .75em;
 	}
